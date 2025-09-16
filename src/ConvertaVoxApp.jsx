@@ -1115,105 +1115,7 @@ export default function RiseEducacao() {
                                 marginBottom: '0.5rem'
                               }}
                             >
-                              <span>{expandedScripts[`${profileKey}-${spinType}`] ? '▼' : '▶'}</span>
-                            </div>
-                            
-                            {expandedScripts[`${profileKey}-${spinType}`] && (
-                              <div style={{marginTop: '1rem', padding: '1rem', background: '#2a3441', borderRadius: '8px'}}>
-                                <p><strong>Objetivo:</strong> {suggestion.script.spin[spinType].objetivo}</p>
-                                <div style={{marginTop: '1rem'}}>
-                                  <strong>Perguntas:</strong>
-                                  <ul style={{marginTop: '0.5rem'}}>
-                                    {suggestion.script.spin[spinType].perguntas.map((pergunta, idx) => (
-                                      <li key={idx} style={{marginBottom: '0.5rem'}}>
-                                        <em>"{pergunta}"</em>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                                <p><strong>🎯 Gatilhos:</strong> {suggestion.script.spin[spinType].gatilhos}</p>
-                              </div>
-                            )}
-                          </div>
-                        ))}
-
-                        {/* Outras seções do script */}
-                        {['apresentacao', 'chamada', 'encaminhamento'].map((section) => (
-                          <div key={section} style={{
-                            background: '#1a2332',
-                            border: '1px solid #444',
-                            borderRadius: '8px',
-                            padding: '1rem',
-                            marginBottom: '1rem'
-                          }}>
-                            <div 
-                              onClick={() => toggleScript(profileKey, section)}
-                              style={{
-                                cursor: 'pointer', 
-                                display: 'flex', 
-                                justifyContent: 'space-between', 
-                                alignItems: 'center',
-                                color: '#d2bc8f',
-                                fontWeight: 'bold',
-                                marginBottom: '0.5rem'
-                              }}
-                            >
-                              <span><strong>
-                                {section === 'apresentacao' && '💡'}
-                                {section === 'chamada' && '🎯'}
-                                {section === 'encaminhamento' && '🔄'}
-                                {' ' + suggestion.script[section].titulo}
-                              </strong></span>
-                              <span>{expandedScripts[`${profileKey}-${section}`] ? '▼' : '▶'}</span>
-                            </div>
-                            
-                            {expandedScripts[`${profileKey}-${section}`] && (
-                              <div style={{marginTop: '1rem', padding: '1rem', background: '#2a3441', borderRadius: '8px'}}>
-                                <div style={{background: '#1a2332', padding: '1rem', borderRadius: '6px', marginBottom: section === 'apresentacao' ? '1rem' : '0'}}>
-                                  <strong>Script:</strong><br />
-                                  <em>"{suggestion.script[section].script}"</em>
-                                </div>
-                                {section === 'apresentacao' && (
-                                  <p><strong>🎯 Gatilhos:</strong> {suggestion.script[section].gatilhos}</p>
-                                )}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Estado inicial */}
-      {sortedProfiles.length === 0 && (
-        <div style={{
-          textAlign: 'center',
-          padding: '3rem',
-          color: '#888',
-          background: '#1a2332',
-          borderRadius: '10px',
-          border: '2px dashed #444'
-        }}>
-          <h2>Análise em Tempo Real</h2>
-          <p>Marque os sinais comportamentais observados para receber as estratégias de conversão personalizadas.</p>
-        </div>
-      )}
-
-      {/* Rodapé */}
-      <div style={{marginTop: '2rem', textAlign: 'center'}}>
-        <p style={{color: '#888', fontSize: '0.9rem'}}>
-          RISE Educação - Sistema de Análise Comportamental para Conversão em Calls
-        </p>
-      </div>
-    </div>
-  );
-}objection.title}</span>
+                              <span>{objection.title}</span>
                               <span>{expandedObjections[`${profileKey}-${index}`] ? '▼' : '▶'}</span>
                             </div>
                             
@@ -1638,6 +1540,104 @@ export default function RiseEducacao() {
                                 {spinType === 'problema' && '❗'}
                                 {spinType === 'implicacao' && '⚠️'}
                                 {spinType === 'necessidade' && '✅'}
-                                 {' ' + suggestion.script.spin[spinType].titulo}
+                                {' ' + suggestion.script.spin[spinType].titulo}
                               </strong></span>
-                              <span>{
+                              <span>{expandedScripts[`${profileKey}-${spinType}`] ? '▼' : '▶'}</span>
+                            </div>
+                            
+                            {expandedScripts[`${profileKey}-${spinType}`] && (
+                              <div style={{marginTop: '1rem', padding: '1rem', background: '#2a3441', borderRadius: '8px'}}>
+                                <p><strong>Objetivo:</strong> {suggestion.script.spin[spinType].objetivo}</p>
+                                <div style={{marginTop: '1rem'}}>
+                                  <strong>Perguntas:</strong>
+                                  <ul style={{marginTop: '0.5rem'}}>
+                                    {suggestion.script.spin[spinType].perguntas.map((pergunta, idx) => (
+                                      <li key={idx} style={{marginBottom: '0.5rem'}}>
+                                        <em>"{pergunta}"</em>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                                <p><strong>🎯 Gatilhos:</strong> {suggestion.script.spin[spinType].gatilhos}</p>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+
+                        {/* Outras seções do script */}
+                        {['apresentacao', 'chamada', 'encaminhamento'].map((section) => (
+                          <div key={section} style={{
+                            background: '#1a2332',
+                            border: '1px solid #444',
+                            borderRadius: '8px',
+                            padding: '1rem',
+                            marginBottom: '1rem'
+                          }}>
+                            <div 
+                              onClick={() => toggleScript(profileKey, section)}
+                              style={{
+                                cursor: 'pointer', 
+                                display: 'flex', 
+                                justifyContent: 'space-between', 
+                                alignItems: 'center',
+                                color: '#d2bc8f',
+                                fontWeight: 'bold',
+                                marginBottom: '0.5rem'
+                              }}
+                            >
+                              <span><strong>
+                                {section === 'apresentacao' && '💡'}
+                                {section === 'chamada' && '🎯'}
+                                {section === 'encaminhamento' && '🔄'}
+                                {' ' + suggestion.script[section].titulo}
+                              </strong></span>
+                              <span>{expandedScripts[`${profileKey}-${section}`] ? '▼' : '▶'}</span>
+                            </div>
+                            
+                            {expandedScripts[`${profileKey}-${section}`] && (
+                              <div style={{marginTop: '1rem', padding: '1rem', background: '#2a3441', borderRadius: '8px'}}>
+                                <div style={{background: '#1a2332', padding: '1rem', borderRadius: '6px', marginBottom: section === 'apresentacao' ? '1rem' : '0'}}>
+                                  <strong>Script:</strong><br />
+                                  <em>"{suggestion.script[section].script}"</em>
+                                </div>
+                                {section === 'apresentacao' && (
+                                  <p><strong>🎯 Gatilhos:</strong> {suggestion.script[section].gatilhos}</p>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Estado inicial */}
+      {sortedProfiles.length === 0 && (
+        <div style={{
+          textAlign: 'center',
+          padding: '3rem',
+          color: '#888',
+          background: '#1a2332',
+          borderRadius: '10px',
+          border: '2px dashed #444'
+        }}>
+          <h2>Análise em Tempo Real</h2>
+          <p>Marque os sinais comportamentais observados para receber as estratégias de conversão personalizadas.</p>
+        </div>
+      )}
+
+      {/* Rodapé */}
+      <div style={{marginTop: '2rem', textAlign: 'center'}}>
+        <p style={{color: '#888', fontSize: '0.9rem'}}>
+          RISE Educação - Sistema de Análise Comportamental para Conversão em Calls
+        </p>
+      </div>
+    </div>
+  );
+}
